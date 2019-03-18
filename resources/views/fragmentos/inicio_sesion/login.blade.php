@@ -8,7 +8,12 @@
             <p>
                 <span class="btn btn-danger btn-sm popover-error" data-rel="popover" data-placement="top" data-original-title="<i class='ace-icon fa fa-bolt red'></i> Top Danger" data-content="Hubo un error! {{Session::get('error')}}.">{{Session::get('error')}}</span>
             </p>
-            @endif  
+            @endif 
+            @if (Session::has('success'))
+            <p>
+                <span class="btn btn-primary btn-sm popover-error" data-rel="popover" data-placement="top" data-original-title="<i class='ace-icon fa fa-bolt red'></i> Top Danger" data-content="Mensaje! {{Session::get('success')}}.">{{Session::get('success')}}</span>
+            </p>
+            @endif 
             <form method="POST" action="{{url('/inicior_sesion')}}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                 <div class="form-group">

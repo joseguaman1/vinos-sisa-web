@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', function () {
     if(auth()->check()) {
         return view('fragmentos.principal.frm_principal');
@@ -30,3 +30,7 @@ Route::post('/administrar/persona/save', "PersonaController@guardar");
 
 Route::post('/inicior_sesion', "AutentificacionController@iniciar_sesion");
 Route::get('/principal', "AutentificacionController@ingresar");
+
+Route::get('/cerrar_sesion', "AutentificacionController@cerrar_sesion");
+
+Route::get('/administrar/marcas', "MarcaController@index");

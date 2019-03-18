@@ -41,4 +41,9 @@ class AutentificacionController extends Controller {
         
         return view('fragmentos.principal.frm_principal');
     }
+    
+    public function cerrar_sesion() {
+        Auth::logout();
+        return redirect("/")->with('success', 'Ha salido del sistema');
+    }
 }
