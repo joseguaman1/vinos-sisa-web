@@ -13,12 +13,7 @@
 
 Route::get('/', function () {
     if(auth()->check()) {
-        $aux = auth()->user();
-        echo $aux->clave;
-        foreach ($aux as $key=>$item) {
-            echo $key.' --- '.$item.'.... ';
-        }
-        return  'Hola sisa ';
+        return view('fragmentos.principal.frm_principal');
     } else {
         return view('fragmentos.inicio_sesion.login');
     }

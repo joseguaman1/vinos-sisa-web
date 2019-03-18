@@ -37,12 +37,8 @@ class AutentificacionController extends Controller {
         }
     }
     
-    public function ingresar() {
-        $aux = auth()->user();
-        echo $aux->clave;
-        foreach ($aux as $key=>$item) {
-            echo $key.' --- '.$item.'.... ';
-        }
-        return  'Hola sisa ';
+    public function ingresar() {    
+        
+        return view('fragmentos.principal.frm_principal');
     }
 }
