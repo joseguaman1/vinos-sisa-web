@@ -34,3 +34,6 @@ Route::get('/principal', "AutentificacionController@ingresar");
 Route::get('/cerrar_sesion', "AutentificacionController@cerrar_sesion");
 
 Route::get('/administrar/marcas', "MarcaController@index");
+Route::post('/administrar/marcas', "MarcaController@guardar");
+
+Route::get('/administrar/marcas/validar', "MarcaController@validarNombre");
